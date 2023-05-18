@@ -1,0 +1,18 @@
+WimpSlot -min 1024K -max 1024K
+IconSprites <Obey$Dir>.!sprites
+Set Pyro$Dir <Obey$Dir>
+RMEnsure ColourTrans 0.52 RMLoad <Pyro$Dir>.Colours
+<Pyro$Dir>.Tables
+<Pyro$Dir>.G8
+<Pyro$Dir>.G24
+<Pyro$Dir>.Transform
+<Pyro$Dir>.Sound.Crackle
+<Pyro$Dir>.Sound.Explosion
+<Pyro$Dir>.Sound.Fizz
+<Pyro$Dir>.Sound.Launch
+<Pyro$Dir>.Sound.Metal
+<Pyro$Dir>.Sound.Rocket
+<Pyro$Dir>.Sound.Shot
+<Pyro$Dir>.Sound.Warble
+<Pyro$Dir>.Sound.Whistle
+<Pyro$Dir>.!RunImage

@@ -1,0 +1,419 @@
+PYROTECHNIC
+-----------
+Pyrotechnic is a complex firework simulator and editor with which you can construct and display
+practically any type of firework you can imagine. It should run on all Acorn machines from an
+A3000 upwards.
+
+With the use of the editor you can construct a multitude of fireworks which will closely match
+the real thing. There are a multitude of design options giving rise to fireworks which simply
+cannot be replicated in real life. It is also very easy to use so making your favourite firework
+is now only a matter of time. Alternatively a number of preset designs are available for testing
+or modification.
+
+Sound plays an important part in any firework display and all the fireworks come with authentic
+sampled sound or closely matching synthesised sounds.
+
+In this description for the mouse buttons:-
+
+Select - left hand button
+Menu   - middle button
+Adjust - right hand button
+
+Just to show you how to get some action on the screen straight away. Double click on the application
+icon with select (after installing it onto hard disk if necessary). When the Pyrotechnic icon installs
+itself on the icon bar click with the menu button on the icon and a menu will appear. Right at the
+top are two options, 'Display' and 'Firework'. Select either of these and a window will appear.
+'Firework' contains individual fireworks and 'Display' displays of individual fireworks in sequence.
+Just double click on any which takes your fancy and sit back and watch the show.
+
+FIREWORK DESIGN
+---------------
+To get the best from the editor use a 256 colour or greater screen mode. Indeed it is only possible to
+watch fireworks when in such a mode.
+
+SURFACE
+-------
+This controls the characteristics and appearance of the surface upon which the firework operates. The
+button next to the tick controls if a surface is displayed or not. This is useful if you create
+elaborate displays which use a lot of processing power.
+
+The two radio buttons control if a coloured surface is used or a texture mapped one. The texture map
+is processor intensive so for ARM2 users it is best just to use the coloured surface.
+
+Additionally the surface has a number of properties under user control. Each is selectable and they
+only accept values from 0-100.
+
+(1) Resilience. The amount of bounce a particle may expect when hitting the surface. The higher the
+    value the higher the bounce.
+
+(2) Quench. The speed at which heat is taken from a particle, water having a high quench value.
+
+(3) Gravity. The pull exerted by the surface on firework particles. A higher value then the faster
+    they fall.
+
+Red, Green and Blue control the colour of the surface and are alterable by one of three methods with
+the colour box showing the surface colour selected.
+
+(1) By the direction arrows. Click on these to move the bar up and down.
+
+(2) Enter the value directly by clicking on the area and entering a value at the caret. Values between
+    0-255 are acceptable.
+
+(3) Click on the bar where you want it to fill up to.
+
+Click on OK to save the defined surface. In the pane on the right you will find sample surfaces. Just
+click on a name using the menu button and a list of self explanatory options will appear. If you click
+on OK with select then the window and any other filer windows are automatically closed, click with
+adjust to leave on screen. This applies to all windows where you click on OK to save.
+
+For those who want the benefits of a surface without the overhead of plotting it on screen then set
+each RGB component to 0. Then it will not be plotted but particles will bounce off it.
+
+ATMOSPHERE
+----------
+This controls the atmospheric characteristics in which the firework operates. The atmosphere has a
+number of properties under user control. Each is selectable as above except they only accept values
+from 0-100.
+
+(1) Pressure. The atmospheric pressure. The greater the pressure the slower particles will travel.
+
+(2) Velocity. The wind velocity. Note that this is scaled according to the pressure, no pressure no wind.
+
+(3) Variability. The wind velocity variability. A high value makes the wind come and go in gusts,
+    very life-like.
+
+Click on OK to save the defined atmosphere. In the pane on the right you will find sample atmospheres.
+Just click on a name using the menu button and a list of self explanatory options will appear.
+
+FUNCTION
+--------
+The colour of the particle is controlled by the RGB values set when the particle was created. This can
+be altered according to a function. This function can be any curve which when applied to the colour
+will change it.
+
+Firstly there is the box for the function name. Next to it is a filer icon. This will open up a file
+window which contains the functions. Just click on a name using the menu button and a list of self
+explanatory options will. The two radio buttons decide how the curve is displayed on the graph below.
+
+In the function box is the formula used to create the curve which can be changed by the user. Any
+formula which can be EVAL(uated) from BASIC can be used. Click on the box to calculate and display
+the curve. The graph is 512 units wide by 256 units high (+127 to -128). The routine is:-
+
+FOR x=0 TO 511
+ <Calculate y coordinate according to x>
+NEXT
+
+The formula should use the lower case x variable to display meaningful curves. This should be borne
+in mind when writing formulas. Look at the supplied functions to get a feel for it.
+
+As well as this method you can also freehand draw just using the mouse and the select button depressed
+while on the graph area.
+
+Below this are three icons, these invert when the pointer is over them, which help in editing the curve.
+These clear the curve and flip the curve about the x and y axis. Load in a sample function and click on
+the icons to see the effect.
+
+To shift the curve about click on the appropriate number box and enter a value according to the shift
+required. The maximum x shift is 100 and the maximum y shift is 100. These will wrap around or be
+clipped according to the button to the right of the function box.
+
+To scale the curve enter a value between 1 and 200 then click on the scale box. This is the percentage
+by which the values of the curve will be scaled, 100 leaves it exactly the same.The values generated
+will also wrap around or be cleared according to the state of the button to the right of the function
+box.
+
+Click on OK to save the function. The type of graph plotted, the formula used and the actual curve
+are all the information that is saved from this editor.
+
+ENVELOPE
+--------
+Functions can be modified by an envelope when applied to particles. The envelope editor creates
+envelopes for this purpose.
+
+At the top is the box for the envelope name. Next to it is a filer icon. This will open up a file
+window which contains the envelopes. Just click on a name using the menu button and a list of self
+explanatory options will appear.
+
+The envelope is made up of four components known as ADSR; Attack, Decay, Sustain and Release. The
+attack determines how fast the waveform reaches a peak from which it decays to a value where it
+is then sustained for a period until finally it is released. The values for ADSR are as follows.
+
+Attack  0-127 These are absolute values.
+Decay   0-127
+Sustain 0-127
+Release 0-127
+
+The graph is made up of four points each with a small box round it. These can be individually
+manipulated by clicking on the graph and the nearest box to the pointer will be selected and jump
+to it. While keeping the select button pressed you can drag the box to any desired location. Note
+that it is not possible to drag a box past the point at which another box is.
+
+CONFIGURATION
+-------------
+The computer can configured a number of ways from the configure window. At the top is the kind of
+processor the machine has. This affects the limit on the number of particles displayed at any one time.
+
+The screen resolution is currently 320 x 256 in 8 bits. Further screen modes may be added at a
+future date.
+
+Sound channels. The more sound channels you have the greater the complexity of sound effects you can hear. However, each requires some processor time so use wisely.
+
+Volume. The overall volume level applied to all the sounds. Values from 1-127.
+
+Sound output. Toggle the internal speakers on and off. Useful if you are using an external stereo amplifier.
+
+The configurations come into immediate effect but to save for future use click on the OK box at the bottom.
+
+PARTICLE
+--------
+Particles leaving a firework have a characteristic behaviour pattern. Here is where particles are defined.
+These particles are named and can be used in any firework.
+
+Firstly in the design box we have the name. Click on the filer icon to the right to display all the
+current particles. Below is the particle size radio buttons. The size of the ejected particle is
+available in one of four sizes. This makes single particle ejections, such as roman candle effects,
+more effective.
+
+Next there is the colour box consisting of Red, Green and Blue which control the colour of the particle
+as it burns and are alterable by one of three methods.
+
+(1) By the direction arrows. Click on these to move the bar up and down.
+
+(2) Enter the value directly by clicking on the area and entering a value at the caret. Values between
+    0-255 are acceptable.
+
+(3) Click on the bar where you want it to fill up to.
+
+The colour box shows the colour of the particle. The values are held internally to a full 24 bit
+resolution. Between the colour bar and the number box is an option button. This decides if the
+colour component is by a function curve, more on this later.
+
+Just below the colour box is an option button called addition, more on this later, and line. With
+line selected a line is drawn on screen from its present to previous position. Without this the
+particle is represented by aaccording to the size selected and the distance you are away from it.
+
+Associated with each particle is a function curve. During the lifetime of the particle each colour
+component is altered according to this curve only if the option button next to the colour bar is on.
+Simply click on the pop up icon and select a function from the menu available.
+
+With each function curve is a period which is the amount of time taken before the function repeats
+itself. This value is in tenths of a second up to 100 tenths (10 seconds). The option button repeat
+decides this. For with an initial red value of 128, Sine selected, a period of 1 second and the
+amplitude of the sine at 128 then the red component will peak at 255 and trough at 0 every second
+giving a pulse effect.
+
+Here is where the addition button comes into play. Since the range of each colour component is 0-255
+and it is altered by a function (and an optional envelope) then the initial particle colour is
+overwritten by the function. By selecting addition the function value is added in to the present
+value thereby producing a different effect.
+
+The envelope that is applied to the function is selected and controlled in exactly the same way as
+the function. You do not have to have a function or envelope applied to a particle or an envelope
+applied to a function. To clear any function or envelope selected just click in the relevant box.
+
+Possible 'problems' you may encounter when using functions and envelopes. For those of you familar
+with sample theory (and who isn't) then too low a period (sampling frequency) on the function or
+envelope causes a phenomena known as 'aliasing'. The output modifying the RGB values of the particle
+exhibits an effect which was not intended (periodic interference). For example consider the sine wave
+preset function. If the period is too low then only a part of the curve will be used at each repeat
+giving not a smooth change of colour but periodic discontinuous bursts. If the period is the same
+the value will be used everytime giving no variation at all.
+
+Additionally a phenomena known as 'creep' can set in. This is where the length of the data is not a
+whole multiple of the period. For example, the function and envelope curves are 512 bytes long and
+if the period is 100 then each step along the curve is 5.12 bytes. The fractional part is accounted
+for but only to a certain number of precision bits. So every pass through the curve will access
+slightly different locations either creeping in front of or behind the previously accessed location.
+This can give some interesting effects. To eliminate creep make your period a number which divides
+into 512 exactly.
+
+The particle has a number of other properties under user control. Each is selectable as above except
+the values are as given.
+
+(1) Speed. The speed of a particle has when it leaves the firework, a high value throws it high in
+    the air. Note that this is also affected by the atmospheric characteristics. 1-100.
+
+(2) Cone. Imagine an ice cream cone on top of the firework then the particles are ejected at random
+    with a path that lies within the cone. A low value gives a tight ejection pattern while a high
+    value spreads the particles around. For a static this is just as described, for a rocket the cone
+    points downwards and for a catherine wheel the cone is flattend to give the ejection characteristics
+    for this type. 0-90.
+
+(3) Ignition. The length of time before a particle ignites on exit. 1-100 tenths of a second. Note
+    that a particle will only be plotted on screen when it has ignited.
+
+(4) Duration. The length of time a particle exists before dying off. The duration comes into effect
+    from ejection. 1-100 tenths of a second.
+
+When a particle hits the surface a number of things can happen:
+
+(1) Surface present. If the particle is off the displayed surface then it is removed else it uses
+    the surface characteristics for the firework. The envelope, function and spawn are disabled.
+
+(2) Surface absent. The particle is removed when it hits where the surface would have been.
+
+The particle will be removed when it has 'cooled down' completely, it is black in colour or it has
+slowed down sufficiently.
+
+Finally sound. There are a number of separate sound effects which can be attached to a particle and
+they are linked to the following events.
+
+(1) Ignition. The sound used at this time point. Simply click on the popup icon and select from those
+    available.
+
+(2) Death. On the death of the particle this sound is used, death here means when the duration of the
+    particle is up and not when removed because cold, slow etc.
+
+(3) Surface. The sound used on hitting the surface.
+
+To hear any sound click on the pop up menu icon and select the sound you wish to hear played. Select
+using the adjust mouse button instead of select and the menu will stay on screen enabling you to repeat
+the sound easily. To clear any particular sound simply click in the relevant box.
+
+Click on the OK button to save the particle.
+
+Each particle can spawn a number of other particles (see below). When a particle is created for the
+first time these entries are cleared.
+
+SPAWN
+-----
+Particles would be uninteresting if they only left the firework, changed colour and died so they have
+the property of being able to split into other particles over which you have complete control. From
+each 'mother' particle you can have up to 8 'daughter' particles (and these can have daughters also
+ad-infinitum). It is not possible for a mother to give birth to incarnations of itself as this would
+clog up the display on certain time settings. (Sadists who like to see code crawl can get around this.)
+Simply click on the popup menu and select which you want. A particle can be either a 'mother' or
+'daughter' depending on where it is used. To keep things simple we recommend that you create particles
+and use them either as mothers or daughters. Next click on the popup menu next to a daughter name box
+and select which you want.
+
+Now you want to be able to control how the daughter leaves the mother to create different effects.
+This is controlled by two values.
+
+(1) Deviation angle. A value from 0-180 (degrees) 0 points vertically upwards while 180 points
+    vertically downwards.
+
+(2) Rotation angle. A value from 0-360 (degrees). The amount of rotation applied.
+
+To get, say, two daughters identical to the mother being born to the mother at the same time, one up
+and one down, then create two particles the same (use different names). For the deviation angle give
+one 0 and the other 180, do not give any rotation. Using this 'chrysanthemum' type effects are easily
+achieved. Rotations are applied ANTICLOCKWISE as per 3D graphics convention and are applied in the
+direction a mother particle is travelling at that moment.
+
+Now the time a daughter particle is born is entered which is the total time from the mother being born.
+For instance at time 0 the mother is born, if you enter 50 (tenths of a second) in this box then the
+daughter will be born 5 seconds into the life of the mother and daughters from it (if there are any)
+will be born according to their birth time. If the particle should hit the ground before a daughter
+is born then no subsequent daughters will born, the particle is sterile. This value is in tenths of
+a second up to 100 (10 seconds). The daughters can be one off in that only one daughter is born after
+a period of time. They can also be continually born, a repeat button at the right of the time selects
+this.
+
+Lastly, the daughters leaving speed which is set by option buttons. It can either take the speed of
+the mother particle at the time of birth, which is the default, or the exit speed defined in the
+particle editor. The cone is unused.
+
+Using this ability to spawn new particles means it is possible for a great many particles to be active
+at anyone time. This can slow down the simulation despite the heavily optimised plotting routines and
+also make the display cluttered so be careful in its use. Pyrotechnic will attempt to keep a constant
+frame rate so if things are slowing down too much then new particles will not be born. You probably
+will not notice this.
+
+CHARGE
+------
+This is where it finally all comes together. Firstly the name of the firework. Click on the filer window
+and load a pre-defined firework. The type of firework is selectable by radio buttons and they are: static
+(sits still on the ground), catherine wheel (a rotating firework on a post) and a rocket. The same
+defined firework can be displayed in any of these three modes but it is best to design your firework
+with a type in mind.
+
+Down the left are 8 boxes which control which particles the firework is going to be packed with. Simply
+click on the popup menu box and choose one from the list. The colour to the right is a colour key to
+the charge box to it. Simply click on any of the squares to put particles in that particular part of
+the firework. The colour box at the bottom indicates the currently selected particle. To remove all
+particles of a particular colour on the name on the left. To remove just a particular square from the
+charge box click with adjust on the small square itself.
+
+Below this is how many particles are present in each box. Select values in the range 1-25. To the
+right of the firework is the rate of burn for that particular section of the firework. It simply
+controls how many particles ejected at any particular time from that section. Alter this bar by
+clicking on the direction arrows at the far right or on the bar itself.
+
+Finally at the bottom the required atmosphere and surface for this firework. These must be specified
+by clicking on the popup menu and selecting an option. The preset surface 'Black' will give an
+invisible surface (surface not present) and the preset 'Vacuum' will give no atmosphere with normal
+gravity.
+
+If any rows are left free of particles then the firework 'burns' through this at the rate selected
+but no particles are generated. This can give you suitable pauses between sections of the firework.
+If it is completely empty below then the firework will finish.
+
+Save the firework by clicking on the OK box at the bottom.
+
+STAND
+-----
+This lets you build up displays of fireworks which are lit one after the other. Firstly enter the name
+of the stand which you want your display to have. Down the left are 8 boxes which can be filled by
+using the pop up menus to select the fireworks from.
+
+Click on OK to save the stand. In the pane on the right you will find sample stands. Just click on a
+name using the menu button and a list of self explanatory options will appear.
+
+The repeat option, at the side of the name icon, if selected then the display will loop until Escape
+is pressed. This is useful for demonstrations and just to enjoy the fireworks (it also impresses friends).
+
+VIEWING
+-------
+To view your firework you can use either of these two methods.
+
+(1) Select firework from the application menu. The firework window appears. Click on a firework with
+    select.
+
+(2) Select display from the application menu. The display window appears. Click on a display with
+    select.
+
+If any of the component parts of a firework or display are missing from Pyrotechnic then a suitable
+error message will appear informing you of this and you will have to correct it. For errors involving
+spawn of particles you may get an error message saying the particle is 'bomb.fizz'. This means that
+particle 'bomb' has a daughter called 'fizz' which is missing. The '.' separates particle names. If
+the particle name ends in '...' then this means that the full length of the particle string could not
+be shown. In practise this is extremely unlikely to happen.
+
+Pyrotechnic does extensive searches to make sure fireworks, particles, envelopes and functions are
+present as required so this may take a little time especially when run from a floppy disk.
+
+At anytime if you wish to abort a firework or a display then press ESCAPE and you will return to the
+desktop.
+
+When viewing a firework you can use the following controls...
+
+MOUSE
+-----
+Select - Autolock. This makes sure that you are always looking at the centre of the firework which is
+         most useful when you are following a rocket. A small red square will appear in the bottom
+         right hand corner when activated.
+
+Menu   - Pause/Release. A small green square will appear in the bottom right hand corner when activated.
+         This is different from what you might expect: the firework is halted but you can still move/fly
+         around etc.
+
+Adjust - Autopilot. While the firework is active the view point will spiral around and up in the air.
+         If autolock is on then this will keep the firework central. When it has reached a certain height
+         it will start to move down. A small blue square will appear in the bottom right hand corner when
+         activated.
+
+Move left    - move around the firework in a clockwise direction     +
+Move right   - move around the firework in a anticlockwise direction +
+Move away    - tilt downwards *
+Move towards - tilt upwards   *
+
+KEYBOARD
+--------
+Cursor left  - decrease the viewing height  +
+Cursor right - increase the viewing height  +
+Cursor up    - advance towards the firework +
+Cursor down  - retreat from the firework    +
+
++ disabled on autopilot
+* disabled on autolock
